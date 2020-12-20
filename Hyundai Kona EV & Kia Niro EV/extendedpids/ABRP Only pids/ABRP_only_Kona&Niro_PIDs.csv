@@ -1,0 +1,26 @@
+!_ABRP_Battery Current,Batt Current,,val{000_Battery Current},-230,230,A,
+!_ABRP_Battery DC Voltage,Batt Volts,,val{000_Battery DC Voltage},0,406,V,
+!_ABRP_Battery Power,Energy Draw,,val{000_Battery Current}*val{000_Battery DC Voltage}/1000,-90,90,kW,
+!_ABRP_Cumulative Energy Charged,CEC,,val{000_Cumulative Energy Charged},0,1000000,kWh,
+!_ABRP_Cumulative Energy Discharged,CED,,val{000_Cumulative Energy Discharged},0,1000000,kWh,
+!_ABRP_Fast_Charging,Charging,,val{000_HV_Charging},0,1,,
+!_ABRP_State of Charge BMS,SOC BMS,,val{000_State of Charge BMS},0,100,%,
+!_ABRP_State of Charge Display,SOC Display,,val{000_State of Charge Display},0,100,%,
+!_ABRP_State of Health,SOH,,val{000_State of Health},0,100,%,
+!_ABRP_Battery Temperature,Batt T,,val{004_CALC Average Battery Module Temperature},-40,80,C,
+!_ABRP_VMCU Real Vehicle Speed,Real Speed,,val{003_VMCU Real Vehicle Speed},0,180,kmh, 
+001_Outdoor Temperature,Outdoor Temperature,220100,(G/2)-40,-50,50,degC,7B3
+000_Battery Current,Batt Current,0x220101,((Signed(K)*256)+L)/10,-230,230,A,7E4
+000_Battery DC Voltage,Batt Volts,0x220101,((m<8)+n)/10,268.8,403.2,V,7E4
+000_Cumulative Energy Charged,CEC,0x220101,((am<24)+(an<16)+(ao<8)+ap)/10,0,1000000,kWh,7E4
+000_Cumulative Energy Discharged,CED,0x220101,((aq<24)+(ar<16)+(as<8)+at)/10,0,1000000,kWh,7E4
+000_HV_Charging,Charging,0x220101,{F:4} ,0,1,,7E4
+000_State of Charge BMS,SOC BMS,0x220101,e/2,0,100,%,7E4
+000_State of Charge Display,SOC Display,0x220105,af/2,0,100,%,7E4
+000_State of Health,SOH,0x220105,((z<8)+aa)/10,0,100,%,7E4
+004_CALC Average Battery Module Temperature, Batt AvgT,0x220101,(val{000_Battery Module 01 Temperature}+val{000_Battery Module 02 Temperature}+val{000_Battery Module 03 Temperature}+val{000_Battery Module 04 Temperature})/4.0,-40,80,C,7E4
+000_Battery Module 01 Temperature,Batt Temp01,0x220101,Signed(Q),-40,80,C,7E4
+000_Battery Module 02 Temperature,Batt Temp02,0x220101,Signed(R),-40,80,C,7E4
+000_Battery Module 03 Temperature,Batt Temp03,0x220101,Signed(S),-40,80,C,7E4
+000_Battery Module 04 Temperature,Batt Temp04,0x220101,Signed(T),-40,80,C,7E4
+003_VMCU Real Vehicle Speed,Speed,220100,ad,0,170,kmh,7B3
