@@ -10,3 +10,7 @@ Name,ShortName,ModeAndPID,Equation,Min Value,Max Value,Units,Header
 !_ABRP_State of Health,SOH,,val{000_State of Health},0,100,%,
 !_ABRP_Battery Temperature,Batt T,,val{004_CALC Average Battery Module Temperature},-40,80,C,
 !_ABRP_VMCU Real Vehicle Speed,Real Speed,,val{003_VMCU Real Vehicle Speed},0,180,kmh, 
+!_ABRP_tire_pressure_fl,Tire FL,22C00B,(e*6.89476)/5,0,345,kPa,7A0
+!_ABRP_tire_pressure_fr,Tire FR,22C00B,(i*6.89476)/5,0,345,kPa,7A0
+!_ABRP_tire_pressure_rr,Tire RR,22C00B,(m*6.89476)/5,0,345,kPa,7A0
+!_ABRP_tire_pressure_rl,Tire RL,22C00B,(q*6.89476)/5,0,345,kPa,7A0
